@@ -1,0 +1,25 @@
+Voy a crear una herramienta que me permita sincronizar archivos entre dos dispositvos
+Será una web app.
+Tech Stack:
+HTML, CSS, JS, Bootstrap, XAMPP, PHP
+
+Concepto inicial:
+Mi idea es que mediante un servidor de apache se puedan comunicar dos o más computadoras.
+
+Pasos a seguir:
+1- Crear una página de registro
+2- Página de login
+3- Si el usuario al entrar a la página no esta logueado, se le muestra una ventana de loguearse o registrarse
+4- Si ya está logueado mostrar una pantalla dónde se podrán realizar los actos del sistema.
+5- El usuaario podrá subir archivos a el servidor, desde una computadora.
+6- El usuario podrá descargar los archivos desde otro ordenador.
+7- Solo los usuarios mismos podrán acceder a sus arcivos y podrán optar por eliminarlas cuando deseen.
+
+Frontend:
+HTML: Probablemente esté incluído dentro de archivos .php
+CSS: lo usaré para darle estilos personalizados que yo desee.
+JS: Manipularé el DOM para darle una interfaz dinámica al usuario.
+Bootstrap: Me permite maquetar de forma más rápida.
+
+XAMPP: Es el entorno de desarrollo que se usa para poder correr PHP
+PHP: Maneja registros, login, toma en cuenta todos los usuarios. Los usuarios serán guardados en sesiones. Maneja las cargas y descargas de archivos.
