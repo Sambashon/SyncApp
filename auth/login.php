@@ -52,7 +52,13 @@
     ?>
     <ul>
         <?php
-            foreach ($_SESSION["users"] as $user) {
+            if (isset($_SESSION["userRegistered"])) {
+                echo "<script>alert('User registered successfully!');</script>";
+                unset($_SESSION["userRegistered"]); // remove flag so it doesn't show again
+            }
+
+
+            foreach ($_SESSION["users"] as $user) { //prints out all my users for debugging
                 echo $user["username"];
             }
     ?>

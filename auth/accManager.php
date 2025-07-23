@@ -20,8 +20,11 @@
                     "email"=> $email,
                     "password"=> $password
                 ];
-                array_push($_SESSION["users"], $user); //i put the user in the users array
-                echo "<script>alert('User registered successfully!');</script>"; 
+                array_push($_SESSION["users"], $user); //i put the user in the users array 
+                $_SESSION["userRegistered"] = true;// just tells the server that register is set so i can show an alert since i cant put echoes after header
+                header("Location: login.php"); //header redirects users to other pages, must immeadiately use exit after header
+                exit;
+               
             }elseif($formType == "login"){
                 $username = $_POST["Luser"] ?? "";
                 $email = $_POST["Lemail"] ?? "";
