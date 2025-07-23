@@ -1,0 +1,47 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-color: #1E555C;
+}
+
+header{
+    width: 100%;
+    height: fit-content;
+    background-color: #3A2E39;
+    color: #F4D8CD;
+
+    display: flex;
+    align-items: center;
+    padding: 10px;
+}
+header img{
+    height: 65px;
+    width: auto;
+}
+.customDiv{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    flex: 1;
+    color: #F4D8CD;
+
+}
+.customDiv input{
+    background-color: #f4d8cdc4;
+    border-radius: 5px;
+    width: 30vw;
+    height: 30px;
+    padding: 5px;
+    border: 1px solid #3A2E39;
+}
+.asd{
+    display: flex;
+    flex-direction: column;
+}
