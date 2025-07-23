@@ -13,9 +13,6 @@
         <aside>
             <img src="../Resources/SyncAPp.svg" alt="SyncApp">
         </aside>
-        <section>
-            <button>Close session</button>
-        </section>
     </header>
     <div class="customDiv">
         <h1>
@@ -24,31 +21,31 @@
         <div class="formContainer">
             <form method="POST">
                 
-                <input type="hidden" name="formType"value="register"> <!--Allows me to tell whether im registering or logging in-->
+                <input type="hidden" name="formType" value="register"> <!--Allows me to tell whether im registering or logging in-->
 
                 <div class="mb-3 asd">
                     <label for="usernameregister" class="form-label">Enter your username</label>
-                    <input type="text" name="Ruser" id="usernameregister">
+                    <input type="text" name="Ruser" id="usernameregister" required>
                 </div>
 
                 <div class="mb-3 asd">
                     <label for="emailregister" class="form-label">Enter your email</label>
-                    <input type="text" name="Remail" id="emailregister">
+                    <input type="email" name="Remail" id="emailregister">
                 </div>
 
                 <div class="mb-3 asd">
                     <label for="passwordregister" class="form-label">Enter your password</label>
-                    <input type="password" name="Rpassword" id="passwordregister">
+                    <input type="password" name="Rpassword" id="passwordregister" required>
                 </div>
 
-                <button type="submit" class="btn btn-primary">Register</button>
+                <button type="submit" class="btn btn-primary" id="submit">Register</button>
             </form>
         </div>  
     </div>
     
 
     <?php
-        include ("accManager.php");
+        include "accManager.php";
     ?>
     <script src="inputControl.js"></script>
 </body>
