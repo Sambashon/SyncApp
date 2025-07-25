@@ -9,11 +9,9 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header>
-        <aside>
-            <img src="../Resources/SyncAPp.svg" alt="SyncApp">
-        </aside>
-    </header>
+    <?php
+        include "../Resources/header.html"
+    ?>
     <div class="customDiv">
         <h1>
             New here? Register your account!

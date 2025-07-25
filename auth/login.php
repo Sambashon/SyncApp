@@ -9,14 +9,9 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header>
-        <aside>
-            <img src="../Resources/SyncAPp.svg" alt="SyncApp">
-        </aside>
-        <section>
-            <button>Close session</button>
-        </section>
-    </header>
+    <?php
+        include "../Resources/header.html"
+    ?>
     <div class="customDiv">
         <h1>
             Now, Login!
@@ -29,11 +24,6 @@
                 <div class="mb-3 asd">
                     <label for="usernameLogin" class="form-label">Enter your username</label>
                     <input type="text" name="Luser" id="usernameLogin" required>
-                </div>
-
-                <div class="mb-3 asd">
-                    <label for="emaillogin" class="form-label">Enter your email</label>
-                    <input type="email" name="Lemail" id="emailLogin">
                 </div>
 
                 <div class="mb-3 asd">
@@ -56,7 +46,6 @@
                 echo "<script>alert('User registered successfully!');</script>";
                 unset($_SESSION["userRegistered"]); // remove flag so it doesn't show again
             }
-
 
             foreach ($_SESSION["users"] as $user) { //prints out all my users for debugging
                 echo $user["username"];
