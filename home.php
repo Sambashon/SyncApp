@@ -9,6 +9,15 @@
     <link rel="stylesheet" href="auth/styles.css">
 </head>
 <body>
+    <?php
+        include("auth/accManager.php");
+        if (!isset($_SESSION["userLogged"]) || $_SESSION["userLogged"] !== true) {
+        // Redirect to login if not logged in
+        header("Location: login.php");
+        exit;
+    }       
+    ?>
+
     <header>
         <aside>
             <img src="Resources/SyncAPp.svg" alt="SyncApp">
