@@ -1,6 +1,10 @@
 <?php
+
 error_reporting(E_ALL);
-    ini_set("display_errors", 1);
+ini_set("display_errors", 1);
+
+session_start();
+
 #Basically, think of it of when i define all the HTML parts i'll use in JS
 $servername = "localhost";
 $username = "root";
@@ -17,9 +21,9 @@ if ($conn->connect_error) {
 #Noticed a redundancy, I already differentiated whether user is trying to login or register.
 
 if($_SERVER["REQUEST_METHOD"] == "POST"){
-    $formType = trim($_POST["formType"]);
+    $formType = $_POST["formType"];
     if($formType == "register"){
-        $username = $_POST["username"]; #Just defining the vars that recieve userinput
+        $username = trim($_POST["username"]); #Just defining the vars that recieve userinput
         $email = $_POST["email"] ? $_POST["email"] : null; #if no email is given, puts in null
         $password = $_POST["password"];
         $passHash = password_hash($password, PASSWORD_DEFAULT);
@@ -54,9 +58,32 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         
 
     }elseif($formType == "login"){
-        $username = $_POST["username"]; #Just defining the vars that recieve userinput
-        $email = $_POST["email"];
+        $username = trim($_POST["username"]); #Just defining the vars that recieve userinput
         $password = $_POST["password"];
+        
+        if(strlen($username) < 3){
+            die("<script>alert('User too short!'); </script>");
+        }
+
+        $statement = $conn->prepare("SELECT username, password FROM users WHERE username = ?");
+        $statement->bind_param("s", $username);
+        $statement->execute();
+        $result = $statement->get_result();
+
+        if($result->num_rows === 1){
+            $row = $result->fetch_assoc();
+            if(password_verify($password, $row["password"])){
+                $_SESSION["userLogged"] = true;
+                $_SESSION["username"] = $row["username"];
+                $_SESSION["userID"] = $row["username"];
+                echo "<script>alert('Login successful'); window.location.href='../home.php';</script>";
+            }else{
+                echo "<script>alert('Incorrect password');</script>";
+            }
+        }else{
+             echo "<script>alert('User not found');</script>";
+        }
+        $statement->close();
     }
 }
 

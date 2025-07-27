@@ -38,18 +38,13 @@
     
 
     <?php
-        include "accManager.php";
+        include "../Resources/DBManager.php";
     ?>
     <ul>
         <?php
             if (isset($_SESSION["userRegistered"])) {
                 echo "<script>alert('User registered successfully!');</script>";
                 unset($_SESSION["userRegistered"]); // remove flag so it doesn't show again
-            }
-
-            foreach ($_SESSION["users"] as $user) { //prints out all my users for debugging
-                echo $user["username"];
-                echo " ";
             }
     ?>
     </ul>
