@@ -13,7 +13,7 @@ elimSession(){
   echo "All files in '$TARGET_DIR' have been deleted."
 }
 
-
+#TODO: Add a way to start, and stop the server (Apache and MySQL), also it must allow me to view the status of the servers
 opc=0
 while [ "$opc" != 5 ]; do
   clear

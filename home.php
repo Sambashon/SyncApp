@@ -10,12 +10,14 @@
 </head>
 <body>
     <?php
+        
         include("auth/accManager.php");
         if (!isset($_SESSION["userLogged"]) || $_SESSION["userLogged"] !== true) {
-        // Redirect to login if not logged in
-        header("Location: login.php");
-        exit;
-    }       
+            // Redirect to login if not logged in
+            header("Location: auth/login.php");
+            exit;
+        }
+        include "Resources/DBManager.php";  
     ?>
 
     <header>

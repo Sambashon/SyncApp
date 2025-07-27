@@ -1,0 +1,54 @@
+<?php
+#Basically, think of it of when i define all the HTML parts i'll use in JS
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "SyncApp";
+
+$conn = new mysqli($servername, $username, $password, $dbname); #establishes a connection
+$conn->set_charset("utf8mb4");
+if ($conn->connect_error) {
+    die("Error connecting to DB" . $conn->connect_error);
+}
+
+#I'm just gonna use the logic i made for accManager.php
+#Noticed a redundancy, I already differentiated whether user is trying to login or register.
+#TODO:fix all the Rusername and Lusername stuff
+if($_SERVER["REQUEST_METHOD"] == "POST"){
+    $formType = trim($_POST["formType"]);
+    if($formType == "register"){
+        $username = $_POST["Rusername"]; #Just defining the vars that recieve userinput
+        $email = $_POST["Remail"] ? $_POST['Remail'] : null; #if no email is given, puts in null
+        $password = $_POST["Rpassword"];
+        $passHash = password_hash($password, PASSWORD_DEFAULT);
+
+        if($email !== null && !filter_var($email, FILTER_VALIDATE_EMAIL)){
+            die("<script>alert('Invalid email!'); </script>");
+        }
+        
+        if(strlen($username)<3){
+            die("<script>alert('User too short!'); </script>");
+        }
+        #TODO I should make it so that it checks whether or not a user is already registered.
+        #this is to avoid sqlInyections
+        $statement = $conn->prepare("INSERT INTO users(username, email, passHash) VALUES (?, ?, ?)"); #according to chatgpt, these are placeholders, and they're useful to avoid sqlinyections
+        $statement->bind_param("sss", $username, $email, $passHash); #"sss" indicates that the following values are strings bind param puts those vars in the ???
+
+        if ($statement->execute()) {
+            echo "<script>alert('User register successfully!'); </script>";
+        } else {
+            echo "Failed to register: " . $statement->error;
+        }
+        $statement->close();
+        
+
+    }elseif($formType == "login"){
+        $username = $_POST["Lusername"]; #Just defining the vars that recieve userinput
+        $email = $_POST["Lemail"];
+        $password = $_POST["Lpassword"];
+
+
+    }
+}
+
+?>
