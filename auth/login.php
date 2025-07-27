@@ -23,12 +23,12 @@
 
                 <div class="mb-3 asd">
                     <label for="usernameLogin" class="form-label">Enter your username</label>
-                    <input type="text" name="Luser" id="usernameLogin" required>
+                    <input type="text" name="username" id="usernameLogin" required>
                 </div>
 
                 <div class="mb-3 asd">
                     <label for="passwordLogin" class="form-label">Enter your password</label>
-                    <input type="password" name="Lpassword" id="passwordLogin" required>
+                    <input type="password" name="password" id="passwordLogin" required>
                 </div>
 
                 <button type="submit" class="btn btn-primary" id="submit">Login</button>
@@ -49,6 +49,7 @@
 
             foreach ($_SESSION["users"] as $user) { //prints out all my users for debugging
                 echo $user["username"];
+                echo " ";
             }
     ?>
     </ul>

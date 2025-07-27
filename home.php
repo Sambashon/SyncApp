@@ -17,7 +17,6 @@
             header("Location: auth/login.php");
             exit;
         }
-        include "Resources/DBManager.php";  
     ?>
 
     <header>

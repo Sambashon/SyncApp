@@ -1,3 +1,4 @@
+accManager.php is now obsolete.
 
 $sqlUser = "INSERT INTO users(username, email, passHash) 
             VALUES ('$username', '$email', '$passHash')"; #this is what actually inserts stuff in the DB

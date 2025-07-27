@@ -23,17 +23,17 @@
 
                 <div class="mb-3 asd">
                     <label for="usernameregister" class="form-label">Enter your username</label>
-                    <input type="text" name="Ruser" id="usernameregister" required>
+                    <input type="text" name="username" id="usernameregister" required>
                 </div>
 
                 <div class="mb-3 asd">
                     <label for="emailregister" class="form-label">Enter your email</label>
-                    <input type="email" name="Remail" id="emailregister">
+                    <input type="email" name="email" id="emailregister">
                 </div>
 
                 <div class="mb-3 asd">
                     <label for="passwordregister" class="form-label">Enter your password</label>
-                    <input type="password" name="Rpassword" id="passwordregister" required>
+                    <input type="password" name="password" id="passwordregister" required>
                 </div>
 
                 <button type="submit" class="btn btn-primary" id="submit">Register</button>
@@ -43,7 +43,7 @@
     
 
     <?php
-        include "accManager.php";
+        include "../Resources/DBManager.php";
     ?>
     <script src="inputControl.js"></script>
 </body>
