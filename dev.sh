@@ -75,11 +75,13 @@ while [ "$opc" != 6 ]; do
     1)
       echo "Puerto abierto con éxito"
       sudo ufw allow 80/tcp
+      sudo ufw allow 443/tcp
       read -p "Presione enter para continuar"
     ;;
     2)
       echo "Puerto cerrado con éxito"
-      sudo ufw delete  allow 80/tcp
+      sudo ufw delete allow 80/tcp
+      sudo ufw delete allow 443/tcp
       read -p "Presione enter para continuar"
     ;;
     3)
