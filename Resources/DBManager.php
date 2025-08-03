@@ -50,7 +50,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         $statement->bind_param("sss", $username, $email, $passHash); #"sss" indicates that the following values are strings bind param puts those vars in the ???
 
         if ($statement->execute()) {
-            echo "<script>alert('User register successfully!'); 
+            echo "<script>alert('User registered successfully!'); 
                 window.location = '../auth/login.php'</script>";
         } else {
             echo "Failed to register: " . $statement->error;
@@ -77,7 +77,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                 $_SESSION["userLogged"] = true;
                 $_SESSION["username"] = $row["username"];
                 $_SESSION["userID"] = $row["username"];
-                echo "<script>alert('Login successful'); window.location.href='../home.php';</script>";
+                echo "<script>alert('Login successful'); 
+                    window.location.href ='../home.php';</script>";
             }else{
                 echo "<script>alert('Incorrect password');</script>";
             }

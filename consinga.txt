@@ -21,5 +21,6 @@ CSS: lo usaré para darle estilos personalizados que yo desee.
 JS: Manipularé el DOM para darle una interfaz dinámica al usuario.
 Bootstrap: Me permite maquetar de forma más rápida.
 
+Backend:
 XAMPP: Es el entorno de desarrollo que se usa para poder correr PHP
 PHP: Maneja registros, login, toma en cuenta todos los usuarios. Los usuarios serán guardados en sesiones. Maneja las cargas y descargas de archivos.
