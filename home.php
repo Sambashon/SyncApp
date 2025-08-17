@@ -23,18 +23,36 @@
         <aside>
             <img src="Resources/SyncAPp.svg" alt="SyncApp">
         </aside>
+        <?php
+            echo "User: ".$_SESSION["username"];
+        ?>
         <nav>
             <button>Logout</button>
         </nav>
     </header>
     <main>
         <h1>Upload your files</h1>
-        <form method="POST" enctype="multipart/form-data">
+        <form method="POST" action="uploadhandler.php" enctype="multipart/form-data">
             <input type="hidden" name="formType" value="upload">
+            <input type="hidden" name="MAX_FILE_SIZE" value="30000000"> <!--30MB-->
             <label for="fileupload">Upload files..</label>
-            <input type="file" name="fileupload" id="fileupload" placeholder="Select">
+            <br>    
+            <input name="userfile" type="file">
+            <input type="submit" value="Upload">
         </form>
-        
+
+        <?php
+        if($_SERVER["REQUEST_METHOD"] === "POST"){
+            if(!empty($_FILES)){
+                print_r($_FILES);   
+            }else{
+                echo "No file uploaded";
+            }
+        }
+        echo "Hello";
+        echo $_SESSION["userID"];
+        var_dump($_SESSION); // useridnull
+        ?>
     </main>
 </body>
 </html>

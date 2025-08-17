@@ -16,10 +16,6 @@ $conn->set_charset("utf8mb4");
 if ($conn->connect_error) {
     die("Error connecting to DB" . $conn->connect_error);
 }
-
-#I'm just gonna use the logic i made for accManager.php
-#Noticed a redundancy, I already differentiated whether user is trying to login or register.
-
 if($_SERVER["REQUEST_METHOD"] == "POST"){
     $formType = $_POST["formType"];
     if($formType == "register"){
@@ -66,7 +62,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             die("<script>alert('User too short!'); </script>");
         }
 
-        $statement = $conn->prepare("SELECT username, password FROM users WHERE username = ?");
+        $statement = $conn->prepare("SELECT id, username, password FROM users WHERE username = ?");
         $statement->bind_param("s", $username);
         $statement->execute();
         $result = $statement->get_result();
@@ -76,7 +72,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             if(password_verify($password, $row["password"])){
                 $_SESSION["userLogged"] = true;
                 $_SESSION["username"] = $row["username"];
-                $_SESSION["userID"] = $row["username"];
+                $_SESSION["userID"] = $row["id"];
+
                 echo "<script>alert('Login successful'); 
                     window.location.href ='../home.php';</script>";
             }else{
