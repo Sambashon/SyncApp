@@ -66,6 +66,7 @@ while [ "$opc" != 6 ]; do
   echo "1. Abrir puerto 80 tcp para conexiones http"
   echo "2. Cerrar puerto 80 tcp para conexiones http"
   echo "3. Eliminar todas las sesiones"
+  echo "4. Eliminar archivos subidos"
   echo "4. Ver status de puertos, si dice inactive entonces esta abierto, active firewall activado"
   echo "5. Menú administración LAMPP"
   echo "6. Salir"

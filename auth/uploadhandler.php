@@ -1,7 +1,7 @@
 <?php
     session_start();
     $filename = $_FILES["userfile"]["name"]; //in theory gets uploaded file https://www.youtube.com/watch?v=UWMyOleUbys&t=3s
-    $location = "uploads/".$filename;
+    $location = __DIR__."/../uploads/".$filename;
     
     
     if (is_uploaded_file($_FILES["userfile"]["tmp_name"])) {

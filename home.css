@@ -1,0 +1,81 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    flex: 1;
+    background-color: black;
+}
+
+header{
+    display: flex;
+    flex-direction: row;
+    height: 10vh;
+    padding: 0.5rem;
+
+}
+
+.logo{
+    color: #545F66;
+    display: flex;
+    flex-direction: row;
+
+    align-items: center;
+    justify-content: left;
+    height: 100%;
+    width: fit-content;
+}
+
+.searchContainer{
+    transition: box-shadow 0.2s ease;
+    transition: background-color 0.2s ease;
+    width: 80%;
+    border-radius: 40px;
+    padding-left: 1rem;
+    color: white;
+    background-color: #E9EEF6;
+    display: flex;
+    flex-direction: row;
+}
+.searchClicked{
+    background-color: white;
+    box-shadow: 0 3px 1px grey;
+}
+.searchContainer input{ 
+    all: unset;
+    width: 90%;
+}
+.searchContainer .customBtn{
+    transition: background-color 0.2s ease;
+    border-radius: 50%;
+    border: none;
+    background-color: inherit;
+
+    height: 40px;
+    width: auto; 
+}
+.searchContainer .searchBtn:hover{
+    background-color: #DCE0E8;
+}
+
+.nav{
+    gap: 1rem;
+}
+.customBtn{
+    transition: background-color 0.2s ease;
+    all: unset;
+    background-color: #E9EEF6;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 45px;
+    width: 45px;
+    border-radius: 50%;
+}
+.customBtn:hover{
+    background-color: #DCE0E8;
+}
+.customBtn img{
+    height: 35px;
+    width: 35px;
+}

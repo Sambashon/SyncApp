@@ -47,7 +47,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 
         if ($statement->execute()) {
             echo "<script>alert('User registered successfully!'); 
-                window.location = '../auth/login.php'</script>";
+                window.location = '../public/login.php'</script>";
         } else {
             echo "Failed to register: " . $statement->error;
         }
@@ -75,7 +75,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                 $_SESSION["userID"] = $row["id"];
 
                 echo "<script>alert('Login successful'); 
-                    window.location.href ='../home.php';</script>";
+                    window.location.href ='../public/home.php';</script>";
             }else{
                 echo "<script>alert('Incorrect password');</script>";
             }

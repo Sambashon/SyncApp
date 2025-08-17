@@ -6,12 +6,12 @@
     <title>Login</title>
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="../src/css/styles.css">
 </head>
 <body>
     <header>
         <aside>
-            <img src="../Resources/SyncAPp.svg" alt="SyncApp">
+            <img src="assets/SyncAPp.svg" alt="SyncApp">
         </aside>
     </header>
     <div class="customDiv">
@@ -19,7 +19,7 @@
             Now, Login!
         </h1>
         <div class="formContainer">
-            <form method="POST">
+            <form method="POST" action="../auth/DBManager.php">
                 
                 <input type="hidden" name="formType" value="login"> <!--Allows me to tell whether im registering or logging in-->
 
@@ -40,7 +40,7 @@
     
 
     <?php
-        include "../Resources/DBManager.php";
+        include "../auth/DBManager.php";
     ?>
     <ul>
         <?php
@@ -51,6 +51,6 @@
     ?>
     </ul>
     
-    <script src="inputControl.js"></script>
+    <script src="../src/js/inputControl.js"></script>
 </body>
 </html>
