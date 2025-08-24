@@ -6,12 +6,12 @@ ini_set("display_errors", 1);
 session_start();
 
 #Basically, think of it of when i define all the HTML parts i'll use in JS
-$servername = "localhost";
-$username = "root";
-$password = "";
+$dbservername = "localhost";
+$dbusername = "root";
+$dbpassword = "";
 $dbname = "SyncApp";
 
-$conn = new mysqli($servername, $username, $password, $dbname); #establishes a connection
+$conn = new mysqli($dbservername, $dbusername, $dbpassword, $dbname); #establishes a connection
 $conn->set_charset("utf8mb4");
 if ($conn->connect_error) {
     die("Error connecting to DB" . $conn->connect_error);

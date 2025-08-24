@@ -19,7 +19,7 @@
             New here? Register your account!
         </h1>
         <div class="formContainer">
-            <form method="POST" action="../auth/DBManager.php">
+            <form method="POST" action="../auth/accManager.php">
                 
                 <input type="hidden" name="formType" value="register"> <!--Allows me to tell whether im registering or logging in-->
 
@@ -45,7 +45,7 @@
     
 
     <?php
-        include "../auth/DBManager.php";
+        include "../auth/accManager.php";
     ?>
     <script src="../src/js/inputControl.js"></script>
 </body>

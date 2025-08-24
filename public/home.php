@@ -10,13 +10,13 @@
 </head>
 <body>
     <?php
-        
-        include("../auth/DBManager.php");
+        session_start();
         if (!isset($_SESSION["userLogged"]) || $_SESSION["userLogged"] !== true) {
             // Redirect to login if not logged in
             echo "<script>
             alert('User not logged in, log in please!');
-            window.location.href = 'login.php';";
+            window.location.href = 'login.php';
+            </script>";
             exit;
         }
     ?>
@@ -46,12 +46,14 @@
         <?php
         if($_SERVER["REQUEST_METHOD"] === "POST"){
             if(!empty($_FILES)){
-                print_r($_FILES);   
+                print_r($_FILES);
+                $_FILES["userfile"]["name"];
+                $_FILES["userfile"]["size"];
             }else{
                 echo "No file uploaded";
             }
         }
-        var_dump($_SESSION); // useridnull
+        var_dump($_SESSION); // everything works
         ?>
     </main>
 </body>

@@ -19,7 +19,7 @@
             Now, Login!
         </h1>
         <div class="formContainer">
-            <form method="POST" action="../auth/DBManager.php">
+            <form method="POST" action="../auth/accManager.php">
                 
                 <input type="hidden" name="formType" value="login"> <!--Allows me to tell whether im registering or logging in-->
 
@@ -40,7 +40,7 @@
     
 
     <?php
-        include "../auth/DBManager.php";
+        include "../auth/accManager.php";
     ?>
     <ul>
         <?php

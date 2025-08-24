@@ -1,0 +1,55 @@
+main{
+    display: flex;
+    flex: 1;
+}
+.folderCarrousel{
+    display: none;
+}
+.fileSection{
+    flex: 1;
+    background-color: #dbdbdb;
+    border: 1px solid #dbdbdb;
+    border-top-left-radius: 15px;
+    background-color: la;
+}
+aside{
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    width: 20vw;
+    height: 90vh;
+}
+.buttonContainer{
+    height: 15vh;
+    width: inherit;
+    display: flex;
+    align-items: center;
+    padding-left: 0.5rem;
+}
+
+
+.newBtn{
+    transition: background-color 0.2s ease;
+    padding: 15px 25px 15px 25px;
+    border-radius: 15px;
+    border: none;
+    box-shadow: 1px 5px 2px 1px #545F66;
+    
+}
+.newBtn:hover{
+    background-color: #dbdbdb;
+}
+
+.folders{
+    flex: 1;
+    background-color: bisque;
+}
+
+@media (max-width: 512px){
+    .folderCarrousel{
+        display: block;
+    }
+    aside{
+        display: none;
+    }
+}

@@ -1,0 +1,130 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    flex: 1;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    height: 10vh;
+    min-height: 60px;
+    padding: 0.5rem 1rem;
+    background-color: #fff;
+    gap: 1rem;
+}
+
+.logo{
+    color:#545F66;
+    display: flex;
+    flex-direction: row;
+
+    align-items: center;
+    justify-content: left;
+    height: 100%;
+    width: fit-content;
+}
+.search-section {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    padding: 0 1rem;
+    min-width: 0;
+}
+.searchContainer{
+
+    transition: all 0.3s ease;
+    width: 90%;
+    border-radius: 40px;
+    padding-left: 1rem;
+    color: #545F66;
+    background-color: #E9EEF6;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.searchClicked{
+    background-color: white;
+    box-shadow: 0 3px 1px grey;
+}
+.searchContainer input{ 
+    all: unset;
+    width: 90%;
+}
+.searchContainer .customBtn{
+    transition: background-color 0.2s ease;
+    border-radius: 50%;
+    border: none;
+    background-color: inherit;
+
+    height: inherit;
+    width: auto; 
+}
+.searchContainer .searchBtn:hover{
+    background-color: #DCE0E8;
+}
+header aside{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.nav{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+.desktopNav{
+    display: inherit;
+    align-items: inherit;
+    justify-content: inherit;
+    gap: inherit;
+}
+.customBtn{
+    all: unset;
+    transition: all 0.3s ease;
+    background-color: #E9EEF6;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 45px;
+    width: 45px;
+    border-radius: 50%;
+}
+.customBtn:hover{
+    background-color: #DCE0E8;
+}
+.customBtn img{
+    height: 35px;
+    width: 35px;
+}
+#burgerMenu{
+    display: none;
+}
+@media (max-width: 512px){
+    body{
+        background-color: white;
+    }
+    .desktopNav{
+        display: none;
+    }
+    .search-section{
+        width: 50vw;
+    }
+    .searchContainer{
+        width: inherit;
+    }
+    .nav{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    #burgerMenu{
+        display: block;
+        align-self: center;
+        justify-self: center;
+    }
+}
